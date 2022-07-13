@@ -10,6 +10,12 @@ h1 {
     margin-top: 30px;
 }
 
+.status {
+    margin: 20px 0;
+}
+
+
+
 /*店舗情報の枠組み*/
 .div_shop_item {
     padding: 0.5em 1em;
