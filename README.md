@@ -18,8 +18,8 @@ https://restaurant.sushiringblog.com/
 
 ## 開発環境/言語
 ### 開発環境
-MAMP
-Sublime Text
+- MAMP
+- Sublime Text
 
 ### 言語
 - HTML
@@ -40,8 +40,8 @@ Sublime Text
 - ページング機能
 
 ## 不具合情報
-削除できないCookieが端末に登録されている場合、詳細ページ（shop.php）に店舗情報を挿入できない。
-→ Cookieを登録する際に、先頭に削除できないCookieが付いてしまい、上手くCookie情報を取り出せなかったため。
+削除できないCookieが端末に登録されている場合、詳細ページ（shop.php）に店舗情報を挿入できない。  
+→ Cookieを登録する際に、先頭に削除できないCookieが付いてしまい、上手くCookie情報を取り出せなかったため。  
 → シークレットモードを利用することで、不具合を回避可能。
 
 ## フレームワークなど(ver.含む)
