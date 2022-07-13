@@ -1,0 +1,128 @@
+.row {
+	text-align: center;
+}
+
+h1 {
+	padding: 20px 0;
+}
+
+#location-info-btn {
+	margin-top: 30px;
+}
+
+/*店舗情報の枠組み*/
+.div_shop_item {
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    color: #5d627b;
+    background: white;
+    border-top: solid 5px #5d627b;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+}
+
+.shop_item_info, .shop_item_img{
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+img {
+	width: 80%;
+}
+
+/*詳細ボタン*/
+.a_btn_css {
+  display: inline-block;
+  padding: 0.3em 1em;
+  text-decoration: none;
+  color: #67c5ff;
+  border: solid 2px #67c5ff;
+  border-radius: 3px;
+  transition: .4s;
+}
+.a_btn_css:hover {
+  background: #67c5ff;
+  color: white;
+}
+
+/*ページ送りボタン*/
+.pagination_css {
+	display: flex;
+	list-style: none;
+	justify-content: center;
+	padding-top: 30px;
+}
+.pagination_css li:not(:last-child) {
+	margin-right: 5px;
+}
+
+/*ページトップに戻るボタン*/
+#page_top {
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    /*background: #DEDEDE;*/
+    background: #AAD6EC;
+    opacity: 0.8;
+    z-index: 999;
+}
+
+#page_top a {
+    position: relative;
+    display: block;
+    width: 50px;
+    height: 50px;
+    text-decoration: none;
+}
+
+#page_top a::before {
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    content: '\f102';
+    font-size: 25px;
+    color: #fff;
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    text-align: center;
+}
+
+/*要素を隠す*/
+/*#h2_hiddin_item, #ul_hiddin_item{
+	display: none;
+}*/
+.hiddin_item {
+	display: none;
+}
+
+@media screen and (min-width:768px) {
+    /*　画面サイズが768px以上はここを読み込む　*/
+	.shop_item_info h3, .shop_item_info p {
+		text-align: left;
+	}
+	.shop_item_info p {
+		font-size: 18px;
+		margin-bottom: 20px;
+	}
+	.div_a_btn {
+		text-align: right;
+	}
+	.shop_item_info a {
+		display: inline-block;
+    	margin-top: 5px;
+	}
+}
+
+@media screen and (max-width:576px) {
+    /*　画面サイズが576px以下はここを読み込む　*/
+	#shops_container {
+		width: 90%;
+		margin: 0 auto;
+	}
+}
