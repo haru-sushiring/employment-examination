@@ -1,13 +1,13 @@
 .row {
-	text-align: center;
+    text-align: center;
 }
 
 h1 {
-	padding: 20px 0;
+    padding: 20px 0;
 }
 
 #location-info-btn {
-	margin-top: 30px;
+    margin-top: 30px;
 }
 
 /*店舗情報の枠組み*/
@@ -21,12 +21,12 @@ h1 {
 }
 
 .shop_item_info, .shop_item_img{
-	padding-top: 30px;
-	padding-bottom: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 
 img {
-	width: 80%;
+    width: 80%;
 }
 
 /*詳細ボタン*/
@@ -46,13 +46,13 @@ img {
 
 /*ページ送りボタン*/
 .pagination_css {
-	display: flex;
-	list-style: none;
-	justify-content: center;
-	padding-top: 30px;
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    padding-top: 30px;
 }
 .pagination_css li:not(:last-child) {
-	margin-right: 5px;
+    margin-right: 5px;
 }
 
 /*ページトップに戻るボタン*/
@@ -95,31 +95,31 @@ img {
 
 /*要素を隠す*/
 .hiddin_item {
-	display: none;
+    display: none;
 }
 
 @media screen and (min-width:768px) {
     /*　画面サイズが768px以上はここを読み込む　*/
-	.shop_item_info h3, .shop_item_info p {
-		text-align: left;
-	}
-	.shop_item_info p {
-		font-size: 18px;
-		margin-bottom: 20px;
-	}
-	.div_a_btn {
-		text-align: right;
-	}
-	.shop_item_info a {
-		display: inline-block;
-    	margin-top: 5px;
-	}
+    .shop_item_info h3, .shop_item_info p {
+        text-align: left;
+    }
+    .shop_item_info p {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+    .div_a_btn {
+        text-align: right;
+    }
+    .shop_item_info a {
+        display: inline-block;
+        margin-top: 5px;
+    }
 }
 
 @media screen and (max-width:576px) {
     /*　画面サイズが576px以下はここを読み込む　*/
-	#shops_container {
-		width: 90%;
-		margin: 0 auto;
-	}
+    #shops_container {
+        width: 90%;
+        margin: 0 auto;
+    }
 }

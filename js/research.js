@@ -38,7 +38,7 @@ let pagination = (jsonData) => {
     // <p class="count"></p> の中身を書き換え
     let count = (page, step) => {
         const page_count = document.querySelector('.count');
-        // 全ページ数　店舗の総数/ステップ数の余りの有無で場合分け
+        // totalに全ページ数を入れる　店舗の総数/ステップ数の余りの数で分ける
         let total = (shop_length % step == 0) ? (shop_length / step) : (Math.floor(shop_length / step) + 1);
         page_count.innerText = page + "/" + total + "ページ";
     }
@@ -139,8 +139,6 @@ let pagination = (jsonData) => {
   document.getElementById('first').addEventListener('click', () => {
       if(page <= 1) return;
       page = 1;
-      // const a_last_btn = document.getElementById('last_btn');
-      // a_last_btn.href = '#'; // 店舗情報を書き換える時に、ページトップに戻る
       show(page, step);
   });
 
@@ -148,8 +146,6 @@ let pagination = (jsonData) => {
   document.getElementById('prev').addEventListener('click', () => {
       if(page <= 1) return;
       page = page - 1;
-      // const a_last_btn = document.getElementById('last_btn');
-      // a_last_btn.href = '#'; // 店舗情報を書き換える時に、ページトップに戻る
       show(page, step);
   });
 
@@ -157,8 +153,6 @@ let pagination = (jsonData) => {
   document.getElementById('next').addEventListener('click', () => {
       if(page >= Math.floor(shop_length / step) + 1) return;
       page = page + 1;
-      // const a_last_btn = document.getElementById('last_btn');
-      // a_last_btn.href = '#'; // 店舗情報を書き換える時に、ページトップに戻る
       show(page, step);
   });
 
@@ -166,8 +160,6 @@ let pagination = (jsonData) => {
   document.getElementById('last').addEventListener('click', () => {
       if(page >= Math.floor(shop_length / step) + 1) return;
       page = Math.floor(shop_length / step) + 1;
-      // const a_last_btn = document.getElementById('last_btn');
-      // a_last_btn.href = '#'; // 店舗情報を書き換える時に、ページトップに戻る
       show(page, step);
   });
 
@@ -195,14 +187,10 @@ button.addEventListener('click', () => {
   // 初期値
   const status = document.querySelector(".status");
   const research_error = document.getElementById('research_error');
-  research_error.textContent = ''
+  research_error.textContent = '';
   let range = ranges.value;
   const count = 15; // 最大15件紹介する
   flg_cookie = ''; // Cookie登録フラグを空にしておく
-
-  // 隠してある要素（class="hiddin_item"）を表示させる
-  document.getElementById("h2_hiddin_item").classList.remove("hiddin_item");
-  document.getElementById("ul_hiddin_item").classList.remove("hiddin_item");
 
   // ブラウザがGeolocation APIに対応しているかをチェック
   if (!navigator.geolocation) {
@@ -218,7 +206,14 @@ button.addEventListener('click', () => {
   // 位置情報取得処理が成功した時にコールされる関数
   // 引数として、coords(coordinates。緯度・経度など)とtimestamp(タイムスタンプ)の2つを持ったpositionが渡される
   async function success(position) {
-    status.textContent = "";
+    status.textContent = '';
+
+    // 隠してある要素（class="hiddin_item"）を表示させる
+    let h2_hiddin_item = document.getElementById("h2_hiddin_item");
+    h2_hiddin_item.textContent = '';
+    h2_hiddin_item.classList.remove("hiddin_item");
+    document.getElementById("ul_hiddin_item").classList.remove("hiddin_item");
+
     let latitude = position['coords']['latitude']; // 緯度取得
     let longitude = position['coords']['longitude']; // 経度取得
 
@@ -237,12 +232,17 @@ button.addEventListener('click', () => {
     let res = await fetch("main.php", api_data);
     let result_data = await res.json();
     let json = await JSON.parse(result_data);
+
     if (json['results']['results_returned'] == '0') {
       research_error.innerText = '検索範囲内に店舗がありませんでした。\n検索範囲を広げて再検索お願いします。'
     } else {
       let jsonData = json['results']['shop'];
-      shop_length = jsonData.length; // 配列数をグローバル変数に入れる
-      pagination(jsonData); // 受け取ったjsonデータを出力する
+      // 配列数をグローバル変数に入れる
+      shop_length = jsonData.length;
+      // 検索結果の件数を表示
+      h2_hiddin_item.textContent =  `検索結果：${shop_length}件`;
+
+      pagination(jsonData); // 受け取ったjsonデータをHTMLに出力する
     }
 
   }
