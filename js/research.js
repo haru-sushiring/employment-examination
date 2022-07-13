@@ -33,13 +33,14 @@ let pagination = (jsonData) => {
     // 初期値設定
     let page = 1; // 現在のページ（何ページ目か）
     const step = 5; // ステップ数（1ページに表示する店舗数）
+    let total = ''; // 全ページ数
 
     // 現在のページ/全ページ を表示
     // <p class="count"></p> の中身を書き換え
     let count = (page, step) => {
         const page_count = document.querySelector('.count');
         // totalに全ページ数を入れる　店舗の総数/ステップ数の余りの数で分ける
-        let total = (shop_length % step == 0) ? (shop_length / step) : (Math.floor(shop_length / step) + 1);
+        total = (shop_length % step == 0) ? (shop_length / step) : (Math.floor(shop_length / step) + 1);
         page_count.innerText = page + "/" + total + "ページ";
     }
 
@@ -151,15 +152,15 @@ let pagination = (jsonData) => {
 
   // 次ページ遷移トリガー
   document.getElementById('next').addEventListener('click', () => {
-      if(page >= Math.floor(shop_length / step) + 1) return;
+      if(page >= shop_length / step) return;
       page = page + 1;
       show(page, step);
   });
 
   // 最終ページ遷移トリガー
   document.getElementById('last').addEventListener('click', () => {
-      if(page >= Math.floor(shop_length / step) + 1) return;
-      page = Math.floor(shop_length / step) + 1;
+      if(page >= total) return;
+      page = total;
       show(page, step);
   });
 
