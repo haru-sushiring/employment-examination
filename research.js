@@ -219,10 +219,8 @@ button.addEventListener('click', () => {
   // 引数として、coords(coordinates。緯度・経度など)とtimestamp(タイムスタンプ)の2つを持ったpositionが渡される
   async function success(position) {
     status.textContent = "";
-    // let latitude = position['coords']['latitude']; // 緯度取得
-    // let longitude = position['coords']['longitude']; // 経度取得
-    let latitude = '36.25518193'; // 緯度取得
-    let longitude = '139.15604137' // 経度取得
+    let latitude = position['coords']['latitude']; // 緯度取得
+    let longitude = position['coords']['longitude']; // 経度取得
 
     // 検索条件をFormDataに格納する
     let api_postData = new FormData();

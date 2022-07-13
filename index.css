@@ -94,9 +94,6 @@ img {
 }
 
 /*要素を隠す*/
-/*#h2_hiddin_item, #ul_hiddin_item{
-	display: none;
-}*/
 .hiddin_item {
 	display: none;
 }
