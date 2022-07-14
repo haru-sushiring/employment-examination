@@ -10,6 +10,8 @@
 https://restaurant.sushiringblog.com/
 
 ## 対象 OS およびブラウザ(ver.含む)
+※2022年7月13日現在
+
 - macOS Monterey 12.4
 - Windows10
 - iOS 15.5
