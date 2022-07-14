@@ -1,5 +1,3 @@
-下書き
-
 # fenrir-test
 フェンリル株式会社の採用課題
 
@@ -53,6 +51,11 @@ https://restaurant.sushiringblog.com/
 - グルメサーチAPI
 
 ## テーブル定義(ER 図)などの設計ドキュメント
+### 設計図
+![fenrir_restaurant_設計図](https://user-images.githubusercontent.com/80729160/178890294-a65ab40a-603a-4749-99e2-1332deb4041a.jpg)
+
+### ER図
+![fenrir_restaurant_ER図](https://user-images.githubusercontent.com/80729160/178891183-0ddb4eb4-41de-4c41-abb9-7c34cac9da33.jpg)
 
 ## コンセプト
 ワンクリックで近くのお店が分かる
