@@ -52,7 +52,7 @@ https://restaurant.sushiringblog.com/
 
 ## テーブル定義(ER 図)などの設計ドキュメント
 ### 設計図
-![fenrir_restaurant_設計図](https://user-images.githubusercontent.com/80729160/178890294-a65ab40a-603a-4749-99e2-1332deb4041a.jpg)
+![fenrir_restaurant_設計図 (1)](https://user-images.githubusercontent.com/80729160/178891411-3d4874fb-c53f-4f37-a751-d1ee8c07eed3.jpg)
 
 ### ER図
 ![fenrir_restaurant_ER図](https://user-images.githubusercontent.com/80729160/178891183-0ddb4eb4-41de-4c41-abb9-7c34cac9da33.jpg)
